@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Parallel Test Suite]" guice-stage="DEVELOPMENT">
+  <test name="First Test Run">
+    <classes>
+      <class name="training.FirstSeleniumJavaTest"/>
+    </classes>
+  </test> <!-- First Test Run -->
+</suite> <!-- Failed suite [Parallel Test Suite] -->
