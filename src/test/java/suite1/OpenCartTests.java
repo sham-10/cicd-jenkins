@@ -2,6 +2,7 @@ package suite1;
 
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import suite2.SauceDemoTests;
 
 import org.testng.AssertJUnit;
@@ -14,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class OpenCartTests {
@@ -59,35 +61,46 @@ public class OpenCartTests {
 
 
 	//Before test
-	@BeforeTest
-	public void beforeTest() {
-
-		//Instantiate browser based on user input
-
-		if(browser != "" && browser != null) {
-			if(browser.equalsIgnoreCase("Chrome")) {
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-			}
-			else if(browser.equalsIgnoreCase("firefox")) {
-				driver = new FirefoxDriver();
-				driver.manage().window().maximize();
-			}
-			else {
-				System.out.println("Invalid option Selected hence defaulting to Chrome");
-				browser = "Chrome";
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-			}
-		}
-		else {
-			browser = "Chrome";
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-		}
-	}	
+//	@BeforeTest
+//	public void beforeTest() {
+//
+//		//Instantiate browser based on user input
+//
+//		if(browser != "" && browser != null) {
+//			if(browser.equalsIgnoreCase("Chrome")) {
+//				driver = new ChromeDriver();
+//				driver.manage().window().maximize();
+//			}
+//			else if(browser.equalsIgnoreCase("firefox")) {
+//				driver = new FirefoxDriver();
+//				driver.manage().window().maximize();
+//			}
+//			else {
+//				System.out.println("Invalid option Selected hence defaulting to Chrome");
+//				browser = "Chrome";
+//				driver = new ChromeDriver();
+//				driver.manage().window().maximize();
+//			}
+//		}
+//		else {
+//			browser = "Chrome";
+//			driver = new ChromeDriver();
+//			driver.manage().window().maximize();
+//		}
+//	}	
 
 	//hooks - to tear down after test is executed
+//	@AfterTest
+//	public void afterTest() {
+//		driver.quit();			
+//	}	
+	@BeforeTest
+	public void beforeTest() {	
+		
+		ChromeOptions chromeOptions = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver(chromeOptions);
+	}		
 	@AfterTest
 	public void afterTest() {
 		driver.quit();			

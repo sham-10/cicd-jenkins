@@ -3,22 +3,11 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="training.FirstSeleniumJavaTest">
+      <class name="suite2.SauceDemoTests">
         <methods>
-          <include name="TestChromeDriver"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- training.FirstSeleniumJavaTest -->
+      </class> <!-- suite2.SauceDemoTests -->
     </classes>
   </test> <!-- Default test -->
-  <test parallel="none" name="Default test(failed)">
-    <classes>
-      <class name="training.FirstSeleniumJavaTest">
-        <methods>
-          <include name="TestChromeDriver"/>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- training.FirstSeleniumJavaTest -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
