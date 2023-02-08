@@ -43,17 +43,19 @@ public class OpenCartTests {
 	//Test to search for a product
 	@Test
 	public void searchForProduct() {
+	
+		
 		driver.findElement(By.xpath(searchField)).sendKeys(query + Keys.ENTER);
 
 		//sleep only when firefox as page loading takes some more time
-		if(browser.equalsIgnoreCase("firefox")) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+//		if(browser.equalsIgnoreCase("firefox")) {
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
 
 		AssertJUnit.assertTrue(driver.findElement(By.xpath(result)).isDisplayed());
 

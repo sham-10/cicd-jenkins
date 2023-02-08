@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" parallel="tests" name="Failed suite [Parallel Test Suite]" guice-stage="DEVELOPMENT">
-  <test name="First Test Run">
+  <test name="OpenCartTest">
     <classes>
-      <class name="training.FirstSeleniumJavaTest"/>
+      <class name="suite1.OpenCartTests"/>
     </classes>
-  </test> <!-- First Test Run -->
+  </test> <!-- OpenCartTest -->
+  <test name="SaceDemoTest">
+    <classes>
+      <class name="suite2.SauceDemoTests"/>
+    </classes>
+  </test> <!-- SaceDemoTest -->
+  <test parallel="tests" name="SaceDemoTest(failed)">
+    <classes>
+      <class name="suite2.SauceDemoTests">
+        <methods>
+          <include name="login"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- suite2.SauceDemoTests -->
+      <class name="suite1.OpenCartTests">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- suite1.OpenCartTests -->
+    </classes>
+  </test> <!-- SaceDemoTest(failed) -->
+  <test parallel="tests" name="OpenCartTest(failed)">
+    <classes>
+      <class name="suite2.SauceDemoTests">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- suite2.SauceDemoTests -->
+      <class name="suite1.OpenCartTests">
+        <methods>
+          <include name="afterTest"/>
+          <include name="searchForProduct"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- suite1.OpenCartTests -->
+    </classes>
+  </test> <!-- OpenCartTest(failed) -->
 </suite> <!-- Failed suite [Parallel Test Suite] -->
