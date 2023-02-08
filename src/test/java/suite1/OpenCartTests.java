@@ -2,6 +2,7 @@ package suite1;
 
 import org.testng.annotations.Test;
 
+import common.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import suite2.SauceDemoTests;
 
@@ -17,13 +18,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 
-public class OpenCartTests {
+public class OpenCartTests extends BaseTest{
 
-	//For demonstrating parameterized builds
-	String browser = System.getProperty("browser");
 
-	private WebDriver driver;
 	private String url = "http://opencart.abstracta.us/";
 	String searchField = "//*[@id='search']/input";
 	String result = "//*[@id=\"content\"]/div[3]/div/div/div[1]/a/img";
@@ -96,17 +97,7 @@ public class OpenCartTests {
 //	public void afterTest() {
 //		driver.quit();			
 //	}	
-	@BeforeTest
-	public void beforeTest() {	
-		
-		ChromeOptions chromeOptions = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(chromeOptions);
-	}		
-	@AfterTest
-	public void afterTest() {
-		driver.quit();			
-	}	
+	
 
 
 }

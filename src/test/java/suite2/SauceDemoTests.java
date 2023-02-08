@@ -13,26 +13,22 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import common.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 
+public class SauceDemoTests extends BaseTest {
 
-public class SauceDemoTests {
-	private WebDriver driver;
 	private String url = "https://www.saucedemo.com/";
 	private String header = "Swag Labs";
 
-	//For demonstrating parameterized builds
-	String browser = System.getProperty("browser");
-
-
 	public void waitForPageLoaded() {
-		ExpectedCondition<Boolean> expectation = new
-				ExpectedCondition<Boolean>() {
+		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
-				return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+				return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
+						.equals("complete");
 			}
 		};
 		try {
@@ -44,29 +40,29 @@ public class SauceDemoTests {
 		}
 	}
 
-	//Test to launch browser with url
-	@Test(enabled = true, priority = 0)				
+	// Test to launch browser with url
+	@Test(enabled = true, priority = 0)
 	public void open() {
-		driver.get(url); 
+		driver.get(url);
 		waitForPageLoaded();
 		String title = driver.getTitle();
 		System.out.println(title);
-		//My Store
-		AssertJUnit.assertTrue(title.equals(header ));
+		// My Store
+		AssertJUnit.assertTrue(title.equals(header));
 
-	}	
+	}
 
-	//Login
+	// Login
 
 	@Test(enabled = true, priority = 1)
 	public void login() {
-		//open();
+		// open();
 		driver.findElement(By.id("user-name")).sendKeys("standard_user");
 		driver.findElement(By.id("password")).sendKeys("secret_sauce");
 		driver.findElement(By.className("btn_action")).click();
-		String xpathTitle ="//*[@id='header_container']//span[contains(text(),'Products')]";
-		AssertJUnit.assertTrue(driver.findElement(By.xpath(xpathTitle)).
-				getText().trim().toLowerCase().equals("products"));
+		String xpathTitle = "//*[@id='header_container']//span[contains(text(),'Products')]";
+		AssertJUnit
+				.assertTrue(driver.findElement(By.xpath(xpathTitle)).getText().trim().toLowerCase().equals("products"));
 	}
 
 //	//Before test
@@ -97,15 +93,15 @@ public class SauceDemoTests {
 //			driver.manage().window().maximize();
 //		}
 //	}	
-	@BeforeTest
-	public void beforeTest() {	
-		
-		ChromeOptions chromeOptions = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(chromeOptions);
-	}		
-	@AfterTest
-	public void afterTest() {
-		//driver.quit();			
-	}	
+//	@BeforeTest
+//	public void beforeTest() {	
+//		
+//		ChromeOptions chromeOptions = new ChromeOptions();
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver(chromeOptions);
+//	}		
+//	@AfterTest
+//	public void afterTest() {
+//		//driver.quit();			
+//	}	
 }

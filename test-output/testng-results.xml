@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-08T07:16:33Z" name="Default suite" finished-at="2023-02-08T07:16:37Z" duration-ms="3822">
+  <suite started-at="2023-02-08T08:08:16Z" name="Parallel Test Suite" finished-at="2023-02-08T08:08:22Z" duration-ms="5860">
     <groups>
     </groups>
-    <test started-at="2023-02-08T07:16:33Z" name="Default test" finished-at="2023-02-08T07:16:37Z" duration-ms="3822">
+    <test started-at="2023-02-08T08:08:16Z" name="SaceDemoTest" finished-at="2023-02-08T08:08:21Z" duration-ms="4707">
       <class name="suite2.SauceDemoTests">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:suite2.SauceDemoTests@712625fd]" started-at="2023-02-08T15:16:33Z" name="beforeTest" finished-at="2023-02-08T15:16:34Z" duration-ms="1020" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:suite2.SauceDemoTests@3901d134]" started-at="2023-02-08T16:08:16Z" name="beforeTest" finished-at="2023-02-08T16:08:17Z" duration-ms="1185" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="login()[pri:1, instance:suite2.SauceDemoTests@712625fd]" started-at="2023-02-08T15:16:34Z" name="login" finished-at="2023-02-08T15:16:37Z" duration-ms="2794" status="PASS">
+        <test-method signature="open()[pri:0, instance:suite2.SauceDemoTests@3901d134]" started-at="2023-02-08T16:08:17Z" name="open" finished-at="2023-02-08T16:08:20Z" duration-ms="3184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open -->
+        <test-method signature="login()[pri:1, instance:suite2.SauceDemoTests@3901d134]" started-at="2023-02-08T16:08:20Z" name="login" finished-at="2023-02-08T16:08:21Z" duration-ms="239" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:suite2.SauceDemoTests@712625fd]" started-at="2023-02-08T15:16:37Z" name="afterTest" finished-at="2023-02-08T15:16:37Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:suite2.SauceDemoTests@3901d134]" started-at="2023-02-08T16:08:21Z" name="afterTest" finished-at="2023-02-08T16:08:21Z" duration-ms="88" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- suite2.SauceDemoTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SaceDemoTest -->
+    <test started-at="2023-02-08T08:08:16Z" name="OpenCartTest" finished-at="2023-02-08T08:08:22Z" duration-ms="5860">
+      <class name="suite1.OpenCartTests">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:suite1.OpenCartTests@501edcf1]" started-at="2023-02-08T16:08:16Z" name="beforeTest" finished-at="2023-02-08T16:08:17Z" duration-ms="1185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="launchSite()[pri:0, instance:suite1.OpenCartTests@501edcf1]" started-at="2023-02-08T16:08:17Z" name="launchSite" finished-at="2023-02-08T16:08:21Z" duration-ms="3912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchSite -->
+        <test-method signature="searchForProduct()[pri:0, instance:suite1.OpenCartTests@501edcf1]" started-at="2023-02-08T16:08:21Z" name="searchForProduct" finished-at="2023-02-08T16:08:22Z" duration-ms="673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForProduct -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:suite1.OpenCartTests@501edcf1]" started-at="2023-02-08T16:08:22Z" name="afterTest" finished-at="2023-02-08T16:08:22Z" duration-ms="82" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- suite1.OpenCartTests -->
+    </test> <!-- OpenCartTest -->
+  </suite> <!-- Parallel Test Suite -->
 </testng-results>
